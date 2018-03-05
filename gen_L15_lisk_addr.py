@@ -7,6 +7,8 @@ from nacl.exceptions import CryptoError
 
 ###mnemo -> sha256(mnemo) -> ed25519_with_seed(sha256(mnemo))
 ###public key of ed25519 -> lisk addr
+
+WANTED_LEN=16
  
 def gen_lisk_addr():
     mnemo = Mnemonic('english')
@@ -24,10 +26,10 @@ def gen_lisk_addr():
 
     addr_num="".join(temp)
     lisk_addr = str(int(addr_num, 16))+"L"
-    if len(lisk_addr) < 15:
+    if len(lisk_addr) < WANTED_LEN:
       return len(lisk_addr), lisk_addr, words
 
 while True:
     addr = gen_lisk_addr()
     if addr != None:
-      print(gen_lisk_addr())
+      print(addr)
