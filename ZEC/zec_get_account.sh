@@ -1,2 +1,2 @@
-~/zcash/src/zcash-cli getaddressesbyaccount ""
-~/zcash/src/zcash-cli getbalance
+zcash-cli getaddressesbyaccount ""
+zcash-cli getbalance
